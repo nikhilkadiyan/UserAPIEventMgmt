@@ -1,4 +1,4 @@
-async function adduserCall(user){
+async function adduserCall(user:object): Promise<string> {
     // API call
     const response = await fetch(`http://13.234.117.187:10003/users`, {
         method: "POST",

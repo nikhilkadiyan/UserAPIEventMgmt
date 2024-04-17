@@ -1,4 +1,4 @@
-async function patchUser(email,id,mobile,name){
+async function patchUser(email: string,id: string,mobile: string,name: string): Promise<string> {
     // API call
     const response = await fetch(`http://13.234.117.187:10003/users`, {
         method: "PATCH",

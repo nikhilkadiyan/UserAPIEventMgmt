@@ -1,22 +1,20 @@
 import React, { useState } from 'react';
-const adduserCall = require('../apicalls/adduserCall');
+const getUsers = require('../apicalls/getUsers');
 
-
-function AddUser(props) {
+function GetUsers(props) {
     const [user, setUser] = useState({ email: '', name: '', mobile: '' });
 
-    const handleAddClick = async(e) => {
+    const handleGetClick = async (e) => {
         e.preventDefault();
-        let res = await adduserCall(user);
+        let res = await getUsers(user.name, user.email, user.mobile);
         props.updateResOutput(res);
-        props.setAddUserVisibility(false);
+        props.setGetUserVisibility(false);
     }
-    
     const onChange = (e) => {
         setUser({ ...user, [e.target.name]: e.target.value })
     }
     return (
-        <div className='my-4'>
+        <div>
             <form>
                 <div className="mb-3">
                     <label htmlFor="email" className="form-label">Email</label>
@@ -30,14 +28,13 @@ function AddUser(props) {
                     <label htmlFor="mobile" className="form-label">Mobile</label>
                     <input type="text" className="form-control" id="mobile" name='mobile' onChange={onChange} />
                 </div>
-                <div className="my-3">
-                    <button onClick={()=>{props.setAddUserVisibility(false)}} type="button" class="btn btn-secondary me-3">Close</button>
-                    <button onClick={handleAddClick} type="submit" className="btn btn-primary">Add</button>
+                <div className='my-3'>
+                    <button onClick={()=>{props.setGetUserVisibility(false)}} type="button" class="btn btn-secondary me-3">Close</button>
+                    <button onClick={handleGetClick} type="button" className="btn btn-success">Get Users</button>
                 </div>
             </form>
-            
         </div>
     )
 }
 
-export default AddUser
+export default GetUsers

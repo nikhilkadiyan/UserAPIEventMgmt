@@ -1,23 +1,22 @@
-import React, { useState } from 'react';
-const adduserCall = require('../apicalls/adduserCall');
+import React, { useState } from 'react'
+const patchUser = require('../apicalls/patchUser');
 
+function EditUser(props) {
+    const [user, updateUser] = useState({ email: '', name: '', mobile: '',id:'112' });
 
-function AddUser(props) {
-    const [user, setUser] = useState({ email: '', name: '', mobile: '' });
-
-    const handleAddClick = async(e) => {
+    const handleUpdateClick = async(e)=>{
         e.preventDefault();
-        let res = await adduserCall(user);
+        let res = await patchUser(user.email,user.id,user.mobile,user.name);
         props.updateResOutput(res);
-        props.setAddUserVisibility(false);
+        props.setEditUserVisibility(false);
     }
-    
+
     const onChange = (e) => {
-        setUser({ ...user, [e.target.name]: e.target.value })
+        updateUser({ ...user, [e.target.name]: e.target.value })
     }
-    return (
-        <div className='my-4'>
-            <form>
+  return (
+    <div>
+        <form>
                 <div className="mb-3">
                     <label htmlFor="email" className="form-label">Email</label>
                     <input type="email" className="form-control" id="email" name='email' aria-describedby="emailHelp" onChange={onChange} />
@@ -31,13 +30,12 @@ function AddUser(props) {
                     <input type="text" className="form-control" id="mobile" name='mobile' onChange={onChange} />
                 </div>
                 <div className="my-3">
-                    <button onClick={()=>{props.setAddUserVisibility(false)}} type="button" class="btn btn-secondary me-3">Close</button>
-                    <button onClick={handleAddClick} type="submit" className="btn btn-primary">Add</button>
+                    <button onClick={()=>{props.setEditUserVisibility(false)}} type="button" class="btn btn-secondary me-3">Close</button>
+                    <button onClick={handleUpdateClick} type="submit" className="btn btn-primary">Update User</button>
                 </div>
             </form>
-            
-        </div>
-    )
+    </div>
+  )
 }
 
-export default AddUser
+export default EditUser
