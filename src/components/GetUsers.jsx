@@ -29,7 +29,7 @@ function GetUsers(props) {
                     <input type="text" className="form-control" id="mobile" name='mobile' onChange={onChange} />
                 </div>
                 <div className='my-3'>
-                    <button onClick={()=>{props.setGetUserVisibility(false)}} type="button" class="btn btn-secondary me-3">Close</button>
+                    <button onClick={()=>{props.setGetUserVisibility(false)}} type="button" className="btn btn-secondary me-3">Close</button>
                     <button onClick={handleGetClick} type="button" className="btn btn-success">Get Users</button>
                 </div>
             </form>

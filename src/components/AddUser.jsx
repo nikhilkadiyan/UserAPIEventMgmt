@@ -31,7 +31,7 @@ function AddUser(props) {
                     <input type="text" className="form-control" id="mobile" name='mobile' onChange={onChange} />
                 </div>
                 <div className="my-3">
-                    <button onClick={()=>{props.setAddUserVisibility(false)}} type="button" class="btn btn-secondary me-3">Close</button>
+                    <button onClick={()=>{props.setAddUserVisibility(false)}} type="button" className="btn btn-secondary me-3">Close</button>
                     <button onClick={handleAddClick} type="submit" className="btn btn-primary">Add</button>
                 </div>
             </form>

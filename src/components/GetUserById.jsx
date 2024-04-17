@@ -23,7 +23,7 @@ function GetUserById(props) {
                     <input type="text" className="form-control" id="userid" name='userid' onChange={onChange} />
                 </div>
                 <div className="mb-3">
-                    <button onClick={() => { props.setGetUserByIdVisibility(false) }} type="button" class="btn btn-secondary me-3">Close</button>
+                    <button onClick={() => { props.setGetUserByIdVisibility(false) }} type="button" className="btn btn-secondary me-3">Close</button>
                     <button onClick={handleGetClick} type="submit" className="btn btn-primary">Get</button>
                 </div>
             </form>

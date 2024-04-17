@@ -20,10 +20,10 @@ function Home() {
     return (
         <div className='container'>
             <div className="btn-holder my-4">
-                <button onClick={()=>setAddUserVisibility(true)} type="button" class="btn btn-primary me-3">Add a user</button>
-                <button onClick={()=>setGetUserVisibility(true)} type="button" class="btn btn-secondary me-3">Get Users</button>
-                <button onClick={()=>setEditUserVisibility(true)} type="button" class="btn btn-success me-3">Edit a User</button>
-                <button onClick={()=>{setGetUserByIdVisibility(true)}} type="button" class="btn btn-warning">Get User by Id</button>
+                <button onClick={()=>setAddUserVisibility(true)} type="button" className="btn btn-primary me-3">Add a user</button>
+                <button onClick={()=>setGetUserVisibility(true)} type="button" className="btn btn-secondary me-3">Get Users</button>
+                <button onClick={()=>setEditUserVisibility(true)} type="button" className="btn btn-success me-3">Edit a User</button>
+                <button onClick={()=>{setGetUserByIdVisibility(true)}} type="button" className="btn btn-warning">Get User by Id</button>
             </div>
             {addUserVisibility && <AddUser updateResOutput={updateResOutput} setAddUserVisibility={setAddUserVisibility} />}
             {getUserVisibility && <GetUsers updateResOutput={updateResOutput} setGetUserVisibility={setGetUserVisibility} />}

@@ -30,7 +30,7 @@ function EditUser(props) {
                     <input type="text" className="form-control" id="mobile" name='mobile' onChange={onChange} />
                 </div>
                 <div className="my-3">
-                    <button onClick={()=>{props.setEditUserVisibility(false)}} type="button" class="btn btn-secondary me-3">Close</button>
+                    <button onClick={()=>{props.setEditUserVisibility(false)}} type="button" className="btn btn-secondary me-3">Close</button>
                     <button onClick={handleUpdateClick} type="submit" className="btn btn-primary">Update User</button>
                 </div>
             </form>
