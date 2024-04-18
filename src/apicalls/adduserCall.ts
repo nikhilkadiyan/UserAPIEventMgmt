@@ -1,4 +1,10 @@
-async function adduserCall(user:object): Promise<string> {
+interface User {
+  email : string,
+  name : string,
+  mobile : string
+}
+
+async function adduserCall(user: User): Promise<string> {
     // API call
     try {
       const response = await fetch(`http://13.234.117.187:10003/users`, {
@@ -10,8 +16,7 @@ async function adduserCall(user:object): Promise<string> {
         body: JSON.stringify(user),
       });
       const json = await response.json();
-      console.log(json);
-      return json;
+      return JSON.stringify(json);
     } catch (error) {
       return "An error occured."
     }

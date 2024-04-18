@@ -28,7 +28,7 @@ function AddUser(props) {
                 </div>
                 <div className="mb-3">
                     <label htmlFor="mobile" className="form-label">Mobile</label>
-                    <input type="text" className="form-control" id="mobile" name='mobile' onChange={onChange} />
+                    <input type="text" className="form-control" id="mobile" name='mobile' maxLength={10} onChange={onChange} />
                 </div>
                 <div className="my-3">
                     <button onClick={()=>{props.setAddUserVisibility(false)}} type="button" className="btn btn-secondary me-3">Close</button>

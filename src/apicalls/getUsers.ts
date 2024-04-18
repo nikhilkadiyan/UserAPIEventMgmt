@@ -8,8 +8,7 @@ async function getUsers(name: string,email: string,mobile: string): Promise<stri
         },
       });
       const json = await response.json();
-      console.log(json);
-      return json;
+      return JSON.stringify(json);
     } catch (error) {
       return "An error occured";
     }

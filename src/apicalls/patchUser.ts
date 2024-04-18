@@ -10,8 +10,7 @@ async function patchUser(email: string,id: string,mobile: string,name: string): 
         body: JSON.stringify({email,id,mobile,name}),
       });
       const json = await response.json();
-      console.log(json);
-      return json;
+      return JSON.stringify(json);
     } catch (error) {
       return "An error occured."
     }

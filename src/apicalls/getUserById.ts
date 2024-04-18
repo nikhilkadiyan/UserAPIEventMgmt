@@ -9,8 +9,7 @@ async function getUserById(id:string): Promise<string> {
         },
     });
     const json = await response.json();
-    console.log(json);
-    return json;
+    return JSON.stringify(json);
     } catch (error) {
         return "An error occured.";
     }
