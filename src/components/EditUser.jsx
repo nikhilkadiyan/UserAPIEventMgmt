@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 const patchUser = require('../apicalls/patchUser');
 
 function EditUser(props) {
-    const [user, updateUser] = useState({ email: '', name: '', mobile: '', id: '112' });
+    const [user, updateUser] = useState({ email: '', name: '', mobile: '', id: '' });
 
     const handleUpdateClick = async (e) => {
         e.preventDefault();
@@ -18,7 +18,7 @@ function EditUser(props) {
         <div>
             <form>
                 <div className="mb-3">
-                    <label htmlFor="id" className="form-label">Email</label>
+                    <label htmlFor="id" className="form-label">Id</label>
                     <input type="text" className="form-control" id="id" name='id'  onChange={onChange} />
                 </div>
                 <div className="mb-3">
