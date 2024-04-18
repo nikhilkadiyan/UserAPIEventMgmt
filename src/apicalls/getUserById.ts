@@ -1,7 +1,7 @@
 async function getUserById(id:string): Promise<string> {
     // API call
     try {
-        const response = await fetch(`http://13.234.117.187:10003/users/${id}`, {
+        const response = await fetch(`https://em-api.poditservices.com/users/${id}`, {
         method: "GET",
         headers: {
             'accept': 'application/json',

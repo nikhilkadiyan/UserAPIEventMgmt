@@ -7,7 +7,7 @@ interface User {
 async function adduserCall(user: User): Promise<string> {
     // API call
     try {
-      const response = await fetch(`http://13.234.117.187:10003/users`, {
+      const response = await fetch(`https://em-api.poditservices.com/users`, {
         method: "POST",
         headers: {
           'accept': 'application/json',
