@@ -26,7 +26,7 @@ function Home() {
                 <button onClick={()=>setGetUserVisibility(true)} type="button" className="btn btn-secondary me-3">Get Users</button>
                 <button onClick={()=>setEditUserVisibility(true)} type="button" className="btn btn-success me-3">Edit a User</button>
                 <button onClick={()=>{setGetUserByIdVisibility(true)}} type="button" className="btn btn-warning me-3">Get User by Id</button>
-                <button onClick={()=>{setDeleteUsersVisibility(true)}} type="button" className="btn btn-warning">Delete Users</button>
+                <button onClick={()=>{setDeleteUsersVisibility(true)}} type="button" className="btn btn-danger">Delete Users</button>
             </div>
             {addUserVisibility && <AddUser updateResOutput={updateResOutput} setAddUserVisibility={setAddUserVisibility} />}
             {getUserVisibility && <GetUsers updateResOutput={updateResOutput} setGetUserVisibility={setGetUserVisibility} />}

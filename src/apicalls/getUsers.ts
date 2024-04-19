@@ -1,10 +1,16 @@
 async function getUsers(name: string,email: string,mobile: string): Promise<string>{
     // API call
     try {
-      const response = await fetch(`https://em-api.poditservices.com/users?name=${name}&mobile=${mobile}&email=${email}`, {
+      console.log(name,email,mobile);
+      const searchParams = new URLSearchParams();
+      if(name) searchParams.set("name", name)
+      if(email) searchParams.set("email", email)
+      if(mobile) searchParams.set("mobile", mobile)
+      const url = `https://em-api.poditservices.com/users?${searchParams}`
+      const response = await fetch(url, {
         method: "GET",
         headers: {
-          "Content-Type": "application/json",
+          "accept": "application/json",
         },
       });
       const json = await response.json();
